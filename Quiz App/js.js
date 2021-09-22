@@ -177,7 +177,7 @@ const submitBtn = document.getElementById("submit")
 let answerEls = document.querySelectorAll(".answer")
 
 loadQuiz()
-
+//this function loads the quiz data or questions
 function loadQuiz(){
     unselect()
     const currentQuizData = quizData[currentQuestion]
@@ -189,6 +189,7 @@ function loadQuiz(){
 
 }
 
+// This function points to the selected option
 function getSelected(){
     let answer = undefined
 
@@ -201,12 +202,14 @@ function getSelected(){
     return answer
 }
 
+/*prevents the occurance of radio input bein acive on a new slide unless user selects*/
 function unselect(){
     answerEls.forEach((answerEl)=>{
         answerEl.checked = false
         })
 }
 
+// button to submit answer and move to next question
 submitBtn.addEventListener("click", ()=>{
     const answer = getSelected()
 
